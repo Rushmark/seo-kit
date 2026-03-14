@@ -82,14 +82,14 @@ The agent falls back to web search (Brave Search API via OpenClaw) for keyword i
 Copy both skill directories into your OpenClaw workspace:
 
 ```bash
-cp -r seo-agent ~/clawd/skills/
-cp -r seo-forge ~/clawd/skills/
+cp -r seo-agent ~/.openclaw/workspace/skills/
+cp -r seo-forge ~/.openclaw/workspace/skills/
 ```
 
 Make scripts executable:
 
 ```bash
-chmod +x ~/clawd/skills/seo-*/scripts/*.sh
+chmod +x ~/.openclaw/workspace/skills/seo-*/scripts/*.sh
 
 ```
 
@@ -147,5 +147,5 @@ Make sure you've verified your site in [Google Search Console](https://search.go
 
 **Scripts not executable**
 ```bash
-chmod +x ~/clawd/skills/seo-*/scripts/*.sh
+chmod +x ~/.openclaw/workspace/skills/seo-*/scripts/*.sh
 ```

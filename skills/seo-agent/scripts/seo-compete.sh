@@ -12,7 +12,7 @@
 set -euo pipefail
 
 DFS_BASE="https://api.dataforseo.com"
-CONFIG_FILE="$HOME/clawd/workspace/seo-agent/config.yaml"
+CONFIG_FILE="$HOME/.openclaw/workspace/seo-agent/config.yaml"
 
 SITE=""
 COMPETITOR=""

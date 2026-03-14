@@ -119,7 +119,7 @@ Technical SEO reference covering meta tags, schema markup (Article, FAQ, HowTo),
 
 ```bash
 git clone https://github.com/TheMattBerman/seo-kit.git
-cp -r seo-kit/skills/* ~/clawd/skills/
+cp -r seo-kit/skills/* ~/.openclaw/workspace/skills/
 ```
 
 ### 2. Set up auth

@@ -62,7 +62,7 @@ The Agent focuses energy here by default.
 
 ## Scripts
 
-All scripts live in `~/clawd/skills/seo-agent/scripts/`. All use bash + curl + jq. No Python. No npm.
+All scripts live in `~/.openclaw/workspace/skills/seo-agent/scripts/`. All use bash + curl + jq. No Python. No npm.
 
 ### seo-discover.sh — Find Your Next Opportunity
 
@@ -90,13 +90,13 @@ Add `--json` for raw machine-readable output. Default is a human-readable table.
 
 What it does:
 1. Pulls current GSC data
-2. Loads previous snapshot from `~/clawd/workspace/seo-agent/snapshots/`
+2. Loads previous snapshot from `~/.openclaw/workspace/seo-agent/snapshots/`
 3. Diffs positions: climbing, dropping, new entries
 4. Highlights strike zone keywords ready to push
 5. Flags content losing ground (act before it falls further)
 6. Saves new snapshot for next comparison
 
-Snapshots stored at: `~/clawd/workspace/seo-agent/snapshots/SITE-YYYY-MM-DD.json`
+Snapshots stored at: `~/.openclaw/workspace/seo-agent/snapshots/SITE-YYYY-MM-DD.json`
 
 ### seo-compete.sh — Find Their Keywords, Take Them
 
@@ -116,7 +116,7 @@ This feeds directly back into DISCOVER as a seed list.
 
 ## Configuration
 
-On first use, create `~/clawd/workspace/seo-agent/config.yaml`:
+On first use, create `~/.openclaw/workspace/seo-agent/config.yaml`:
 
 ```yaml
 site: "sc-domain:example.com"
@@ -155,7 +155,7 @@ Find your exact property URL in [Search Console](https://search.google.com/searc
 - `sc-domain:example.com` (domain property — broader, recommended)
 
 ### 4. (Optional) Brand Voice
-Drop your brand voice profile at `~/clawd/workspace/brand/voice-profile.md`. The agent reads this when generating content briefs and drafts. Run the `brand-voice` skill first if you haven't.
+Drop your brand voice profile at `~/.openclaw/workspace/brand/voice-profile.md`. The agent reads this when generating content briefs and drafts. Run the `brand-voice` skill first if you haven't.
 
 ---
 

@@ -14,9 +14,9 @@
 set -euo pipefail
 
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
-GSC_AUTH_SCRIPT="$HOME/clawd/skills/gsc-report/scripts/get-token.sh"
+GSC_AUTH_SCRIPT="$HOME/.openclaw/workspace/skills/gsc-report/scripts/get-token.sh"
 DFS_BASE="https://api.dataforseo.com"
-CONFIG_FILE="$HOME/clawd/workspace/seo-agent/config.yaml"
+CONFIG_FILE="$HOME/.openclaw/workspace/seo-agent/config.yaml"
 
 # --- Defaults ---
 SITE=""
