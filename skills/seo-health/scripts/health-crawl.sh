@@ -22,7 +22,7 @@ echo "======================================"
 # Check robots.txt
 echo ""
 echo "📋 robots.txt"
-ROBOTS=$(curl -s -A "Mozilla/5.0 (compatible; SEOKit/1.0)"I "https://${DOMAIN}/robots.txt" -o /dev/null -w "%{http_code}")
+ROBOTS=$(curl -s -A "Mozilla/5.0 (compatible; SEOKit/1.0)" "https://${DOMAIN}/robots.txt" -o /dev/null -w "%{http_code}")
 if [[ "$ROBOTS" == "200" ]]; then
   echo "  ✅ robots.txt exists"
   SITEMAP_IN_ROBOTS=$(curl -s -A "Mozilla/5.0 (compatible; SEOKit/1.0)" "https://${DOMAIN}/robots.txt" | grep -i "sitemap" || true)
@@ -38,16 +38,16 @@ fi
 # Check sitemap
 echo ""
 echo "🗺️ Sitemap"
-SITEMAP_STATUS=$(curl -s -A "Mozilla/5.0 (compatible; SEOKit/1.0)"I "$SITEMAP" -o /dev/null -w "%{http_code}")
+SITEMAP_STATUS=$(curl -s -A "Mozilla/5.0 (compatible; SEOKit/1.0)" "$SITEMAP" -o /dev/null -w "%{http_code}")
 if [[ "$SITEMAP_STATUS" == "200" ]]; then
-  URLS=$(curl -s -A "Mozilla/5.0 (compatible; SEOKit/1.0)"L "$SITEMAP" | grep -oP '<loc>\K[^<]+' | head -"$LIMIT")
+  URLS=$(curl -s -A "Mozilla/5.0 (compatible; SEOKit/1.0)" -L "$SITEMAP" | grep -oP '<loc>\K[^<]+' | head -"$LIMIT")
   URL_COUNT=$(wc -l <<< "$URLS")
   echo "  ✅ Sitemap accessible ($URL_COUNT URLs, checking top $LIMIT)"
 else
   echo "  ❌ Sitemap not accessible ($SITEMAP_STATUS)"
   echo "  Trying sitemap_index..."
-  URLS=$(curl -s -A "Mozilla/5.0 (compatible; SEOKit/1.0)"L "$SITEMAP" | grep -oP '<loc>\K[^<]+' | head -3 | while read -r SUB; do
-    curl -s -A "Mozilla/5.0 (compatible; SEOKit/1.0)"L "$SUB" 2>/dev/null | grep -oP '<loc>\K[^<]+' | head -20
+  URLS=$(curl -s -A "Mozilla/5.0 (compatible; SEOKit/1.0)" -L "$SITEMAP" | grep -oP '<loc>\K[^<]+' | head -3 | while read -r SUB; do
+    curl -s -A "Mozilla/5.0 (compatible; SEOKit/1.0)" -L "$SUB" 2>/dev/null | grep -oP '<loc>\K[^<]+' | head -20
   done)
   URL_COUNT=$(wc -l <<< "$URLS")
   echo "  Found $URL_COUNT URLs from sitemap index"
@@ -70,7 +70,7 @@ while IFS= read -r PAGE; do
   [[ -z "$PAGE" ]] && continue
   
   # Get page
-  RESPONSE=$(curl -s -A "Mozilla/5.0 (compatible; SEOKit/1.0)"L --max-time 10 -w "\n%{http_code}" "$PAGE" 2>/dev/null)
+  RESPONSE=$(curl -s -A "Mozilla/5.0 (compatible; SEOKit/1.0)" -L --max-time 10 -w "\n%{http_code}" "$PAGE" 2>/dev/null)
   STATUS=$(echo "$RESPONSE" | tail -1)
   BODY=$(echo "$RESPONSE" | sed '$d')
   

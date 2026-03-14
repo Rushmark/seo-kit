@@ -3,7 +3,7 @@
 # Usage: seo-interview.sh [--json] [--mode interview|refinement|check]
 # Returns: JSON with current mode and questions to ask the user
 
-WORKSPACE="${CLAWD_WORKSPACE:-$HOME/clawd/workspace}"
+WORKSPACE="${CLAWD_WORKSPACE:-$HOME/.openclaw/workspace}"
 BRAND_DIR="$WORKSPACE/brand"
 JSON_MODE=false
 FORCE_MODE=""

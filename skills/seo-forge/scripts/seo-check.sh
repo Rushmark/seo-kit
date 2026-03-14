@@ -3,7 +3,7 @@
 # Usage: seo-check.sh [--json]
 # Returns: Brand context status, file inventory, days since refinement
 
-WORKSPACE="${CLAWD_WORKSPACE:-$HOME/clawd/workspace}"
+WORKSPACE="${CLAWD_WORKSPACE:-$HOME/.openclaw/workspace}"
 BRAND_DIR="$WORKSPACE/brand"
 JSON_MODE=false
 

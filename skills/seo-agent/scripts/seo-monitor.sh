@@ -11,9 +11,9 @@
 
 set -euo pipefail
 
-GSC_AUTH_SCRIPT="$HOME/clawd/skills/gsc-report/scripts/get-token.sh"
-SNAPSHOT_DIR="$HOME/clawd/workspace/seo-agent/snapshots"
-CONFIG_FILE="$HOME/clawd/workspace/seo-agent/config.yaml"
+GSC_AUTH_SCRIPT="$HOME/.openclaw/workspace/skills/gsc-report/scripts/get-token.sh"
+SNAPSHOT_DIR="$HOME/.openclaw/workspace/seo-agent/snapshots"
+CONFIG_FILE="$HOME/.openclaw/workspace/seo-agent/config.yaml"
 
 SITE=""
 DAYS=28
